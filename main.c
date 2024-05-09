@@ -26,7 +26,7 @@ static char	**get_numbers(char **argv, int argc)
 	return (matrix);
 }
 
-int	main(int argc, char **argv)
+int	ft_main(int argc, char **argv)
 {
 	t_stack_needs	*a;
 	t_stack_needs	*b;
@@ -39,12 +39,12 @@ int	main(int argc, char **argv)
 		argv = get_numbers(argv, argc);
 		check_numbers(argv);
 		create_stack(argv, &a);
-		if (is_sorted(a) == 1)
-			printf("stack a is sorted\n");
-		else
+		if (is_sorted(a) == 0)
 		{
 			if (stack_len(a) <= 3)
 				sort_three(&a, &b);
+			else
+				push_swap_magic(&a, &b);
 		}
 	}
 	if (is_sorted(a) == 1)
@@ -52,8 +52,8 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-// int main(int argc, char **argv)
-// {
-// 	ft_main(argc, argv);
-// 	leakcheck();
-// }
+int main(int argc, char **argv)
+{
+	ft_main(argc, argv);
+	leakcheck();
+}

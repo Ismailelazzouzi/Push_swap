@@ -4,10 +4,16 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 typedef struct s_stack_needs
 {
 	int						value;
+	int						pos;
+	int						push_cost;
+	bool					up_down;
+	bool					priority;
+	t_stack_needs			*target;
 	struct s_stack_needs	*next;
 	struct s_stack_needs	*prev;
 }	t_stack_needs;
@@ -50,4 +56,12 @@ void			reverse_rotate_a_b(t_stack_needs **a, t_stack_needs **b);
 int				is_sorted(t_stack_needs *stack);
 t_stack_needs	*find_highest(t_stack_needs *stack);
 void			sort_three(t_stack_needs **a, t_stack_needs **b);
+void			push_swap_magic(t_stack_needs **a, t_stack_needs **b);
+void			start_nodes(t_stack_needs *a, t_stack_needs *b);
+void			set_targets(t_stack_needs *a, t_stack_needs *b);
+t_stack_needs	*get_smallest(t_stack_needs *stack);
+void			set_push_cost(t_stack_needs *a, t_stack_needs *b);
+void			set_positions(t_stack_needs *stack);
+void			set_priority(t_stack_needs *a, t_stack_needs *b);
+void			insert(t_stack_needs *a, t_stack_needs *b);
 #endif

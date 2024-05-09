@@ -12,7 +12,7 @@ void	check_validity(char **argv, int argc)
 		while (argv[i][j] != '\0')
 		{
 			if ((argv[i][j] < '0' || argv[i][j] > '9') && 
-				(argv[i][j] != ' ' && argv[i][j] != '-'))
+				(argv[i][j] != ' ' && argv[i][j] != '-' && argv[i][j] != '+'))
 			{
 				write(2, "Error\n", 6);
 				exit(1);
