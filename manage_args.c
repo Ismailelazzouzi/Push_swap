@@ -16,21 +16,26 @@ void	check_validity(char **argv, int argc)
 {
 	int	i;
 	int	j;
+	int	numbers_count;
 
 	i = 1;
 	while (i < argc)
 	{
 		j = 0;
+		numbers_count = 0;
 		while (argv[i][j] != '\0')
 		{
 			if ((argv[i][j] < '0' || argv[i][j] > '9') && 
 				(argv[i][j] != ' ' && argv[i][j] != '-' && argv[i][j] != '+'))
-			{
-				write(2, "Error\n", 6);
-				exit(1);
-			}
+				Error();
+			if (test_case(argv, i, j) == 1)
+				Error();
+			if (argv[i][j] >= '0' && argv[i][j] <= '9')
+				numbers_count++;
 			j++;
 		}
+		if (numbers_count == 0)
+			Error();
 		i++;
 	}
 }

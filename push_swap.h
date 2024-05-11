@@ -31,6 +31,8 @@ typedef struct s_stack_needs
 }	t_stack_needs;
 
 void			check_validity(char **argv, int argc);
+void			Error(void);
+int				test_case(char **argv, int i, int j);
 void			check_numbers(char **numbers);
 static char		**get_numbers(char **argv, int argc);
 char			*ft_strjoin(char const *s1, char const *s2);
