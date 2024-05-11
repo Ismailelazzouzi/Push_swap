@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isel-azz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/11 07:50:14 by isel-azz          #+#    #+#             */
+/*   Updated: 2024/05/11 07:50:16 by isel-azz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	reverse_rotate(t_stack_needs **stack)
 {
-	t_stack_needs *last_node;
+	t_stack_needs	*last_node;
 
 	if (stack == NULL || *stack == NULL || stack_len(*stack) <= 1)
 		return ;
@@ -28,7 +40,7 @@ void	reverse_rotate_b(t_stack_needs **b)
 
 void	reverse_rotate_a_b(t_stack_needs **a, t_stack_needs **b)
 {
-	reverse_rotate_a(a);
-	reverse_rotate_b(b);
+	reverse_rotate(a);
+	reverse_rotate(b);
 	write(1, "rrr\n", 4);
 }

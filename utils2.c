@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isel-azz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/11 07:53:00 by isel-azz          #+#    #+#             */
+/*   Updated: 2024/05/11 07:53:03 by isel-azz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_stack_needs	*get_smallest(t_stack_needs *stack)
@@ -22,9 +34,9 @@ t_stack_needs	*get_smallest(t_stack_needs *stack)
 
 void	set_targets(t_stack_needs *a, t_stack_needs *b)
 {
-	t_stack_needs *a_now;
-	t_stack_needs *target;
-	long		best_match;
+	t_stack_needs	*a_now;
+	t_stack_needs	*target;
+	long			best_match;
 
 	while (b)
 	{
@@ -50,7 +62,7 @@ void	set_targets(t_stack_needs *a, t_stack_needs *b)
 void	set_push_cost(t_stack_needs *a, t_stack_needs *b)
 {
 	int	a_len;
-	int b_len;
+	int	b_len;
 
 	a_len = stack_len(a);
 	b_len = stack_len(b);
@@ -75,6 +87,7 @@ void	set_positions(t_stack_needs *stack)
 	if (stack == NULL)
 		return ;
 	i = 0;
+	center = stack_len(stack) / 2;
 	while (stack)
 	{
 		stack->pos = i;
@@ -83,10 +96,11 @@ void	set_positions(t_stack_needs *stack)
 		else
 			stack->up_down = false;
 		stack = stack->next;
+		i++;
 	}
 }
 
-void	set_priority(t_stack_needs *a, t_stack_needs *b)
+void	set_priority(t_stack_needs *b)
 {
 	long			best_match;
 	t_stack_needs	*node;

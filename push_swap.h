@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isel-azz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/11 07:46:55 by isel-azz          #+#    #+#             */
+/*   Updated: 2024/05/11 07:46:58 by isel-azz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -13,7 +25,7 @@ typedef struct s_stack_needs
 	int						push_cost;
 	bool					up_down;
 	bool					priority;
-	t_stack_needs			*target;
+	struct s_stack_needs	*target;
 	struct s_stack_needs	*next;
 	struct s_stack_needs	*prev;
 }	t_stack_needs;
@@ -62,6 +74,13 @@ void			set_targets(t_stack_needs *a, t_stack_needs *b);
 t_stack_needs	*get_smallest(t_stack_needs *stack);
 void			set_push_cost(t_stack_needs *a, t_stack_needs *b);
 void			set_positions(t_stack_needs *stack);
-void			set_priority(t_stack_needs *a, t_stack_needs *b);
-void			insert(t_stack_needs *a, t_stack_needs *b);
+void			set_priority(t_stack_needs *b);
+void			insert(t_stack_needs **a, t_stack_needs **b);
+t_stack_needs	*get_priority(t_stack_needs *stack);
+void			rotate_stacks(t_stack_needs **a, t_stack_needs **b,
+					t_stack_needs *priority_node);
+void			reverse_rotate_stacks(t_stack_needs **a, t_stack_needs **b,
+					t_stack_needs *priority_node);
+void			complete(t_stack_needs **stack, t_stack_needs *top, char which);
+void			freelist(t_stack_needs *a);
 #endif

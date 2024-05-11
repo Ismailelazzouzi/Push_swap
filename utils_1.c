@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_1.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isel-azz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/11 07:52:48 by isel-azz          #+#    #+#             */
+/*   Updated: 2024/05/11 07:52:50 by isel-azz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_strcmp(char *s1, char *s2)
@@ -55,8 +67,8 @@ int	is_sorted(t_stack_needs *stack)
 
 t_stack_needs	*find_highest(t_stack_needs *stack)
 {
-	t_stack_needs *node;
-	int			highest;
+	t_stack_needs	*node;
+	int				highest;
 
 	highest = INT_MIN;
 	while (stack)

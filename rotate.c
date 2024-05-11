@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isel-azz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/11 07:50:42 by isel-azz          #+#    #+#             */
+/*   Updated: 2024/05/11 07:50:45 by isel-azz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	rotate_stack(t_stack_needs **stack)
 {
-	t_stack_needs *last_node;
+	t_stack_needs	*last_node;
 
 	if (stack == NULL || *stack == NULL || stack_len(*stack) <= 1)
 		return ;

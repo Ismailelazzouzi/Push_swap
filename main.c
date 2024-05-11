@@ -1,10 +1,16 @@
-#include <stdio.h>
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isel-azz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/11 07:43:12 by isel-azz          #+#    #+#             */
+/*   Updated: 2024/05/11 07:43:14 by isel-azz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	leakcheck(void)
-{
-	system("leaks a.out");
-}
+#include "push_swap.h"
 
 static char	**get_numbers(char **argv, int argc)
 {
@@ -26,7 +32,7 @@ static char	**get_numbers(char **argv, int argc)
 	return (matrix);
 }
 
-int	ft_main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack_needs	*a;
 	t_stack_needs	*b;
@@ -46,14 +52,7 @@ int	ft_main(int argc, char **argv)
 			else
 				push_swap_magic(&a, &b);
 		}
+		freelist(a);
 	}
-	if (is_sorted(a) == 1)
-		printf("stack a is sorted\n");
 	return (0);
-}
-
-int main(int argc, char **argv)
-{
-	ft_main(argc, argv);
-	leakcheck();
 }

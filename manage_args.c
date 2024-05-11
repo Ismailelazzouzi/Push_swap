@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   manage_args.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isel-azz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/11 07:43:40 by isel-azz          #+#    #+#             */
+/*   Updated: 2024/05/11 07:43:43 by isel-azz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	check_validity(char **argv, int argc)
@@ -34,7 +46,6 @@ static char	**get_numbers(char **argv, int argc)
 	matrix = NULL;
 	while (i < argc)
 		numbers = ft_strjoin(numbers, argv[i++]);
-
 	if (!numbers)
 		return (NULL);
 	matrix = ft_split(numbers, ' ');
