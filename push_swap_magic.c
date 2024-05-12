@@ -45,7 +45,7 @@ void	push_swap_magic(t_stack_needs **a, t_stack_needs **b)
 	a_len = stack_len(*a);
 	while (a_len-- > 3)
 		push_b(a, b);
-	sort_three(a, b);
+	sort_three(a);
 	while (*b)
 	{
 		start_nodes(*a, *b);

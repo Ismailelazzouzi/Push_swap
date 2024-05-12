@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   manage_args.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isel-azz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/11 07:43:40 by isel-azz          #+#    #+#             */
+/*   Updated: 2024/05/11 07:43:43 by isel-azz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	Error(void)
+void	error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
@@ -9,9 +21,9 @@ void	Error(void)
 int	test_case(char **argv, int i, int j)
 {
 	if ((argv[i][j] == '-' && argv[i][j + 1] == '-')
-		||(argv[i][j] == '-' && argv[i][j + 1] == '+')
-		|| (argv[i][j] == '+' && argv[i][j + 1] == '+')
-		|| (argv[i][j] == '+' && argv[i][j + 1] == '-'))
-			return (1);
+	|| (argv[i][j] == '-' && argv[i][j + 1] == '+')
+	|| (argv[i][j] == '+' && argv[i][j + 1] == '+')
+	|| (argv[i][j] == '+' && argv[i][j + 1] == '-'))
+		return (1);
 	return (0);
 }

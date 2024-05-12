@@ -25,22 +25,22 @@ void	check_validity(char **argv, int argc)
 		numbers_count = 0;
 		while (argv[i][j] != '\0')
 		{
-			if ((argv[i][j] < '0' || argv[i][j] > '9') && 
+			if ((argv[i][j] < '0' || argv[i][j] > '9') &&
 				(argv[i][j] != ' ' && argv[i][j] != '-' && argv[i][j] != '+'))
-				Error();
+				error();
 			if (test_case(argv, i, j) == 1)
-				Error();
+				error();
 			if (argv[i][j] >= '0' && argv[i][j] <= '9')
 				numbers_count++;
 			j++;
 		}
 		if (numbers_count == 0)
-			Error();
+			error();
 		i++;
 	}
 }
 
-static char	**get_numbers(char **argv, int argc)
+char	**get_numbers(char **argv, int argc)
 {
 	static char	*numbers;
 	static char	**matrix;

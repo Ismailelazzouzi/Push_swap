@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	sort_three(t_stack_needs **a, t_stack_needs **b)
+void	sort_three(t_stack_needs **a)
 {
 	t_stack_needs	*biggest;
 

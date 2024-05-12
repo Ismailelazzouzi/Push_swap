@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static int	count_words(const char *s, char c)
+int	count_words(const char *s, char c)
 {
 	int	count;
 	int	i;
@@ -31,7 +31,7 @@ static int	count_words(const char *s, char c)
 	return (count);
 }
 
-static void	ending(int *start, int *end, int c, const char *s)
+void	ending(int *start, int *end, int c, const char *s)
 {
 	while (s[*start] == c && s[*start] != '\0')
 		*start += 1;
@@ -40,7 +40,7 @@ static void	ending(int *start, int *end, int c, const char *s)
 		*end += 1;
 }
 
-static char	**freesplit(char **res, int i)
+char	**freesplit(char **res, int i)
 {
 	if (res[i] == NULL)
 	{
@@ -51,7 +51,7 @@ static char	**freesplit(char **res, int i)
 	return (NULL);
 }
 
-static void	fill(int start, int end, const char *s, char *res)
+void	fill(int start, int end, const char *s, char *res)
 {
 	int	i;
 

@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 		if (is_sorted(a) == 0)
 		{
 			if (stack_len(a) <= 3)
-				sort_three(&a, &b);
+				sort_three(&a);
 			else
 				push_swap_magic(&a, &b);
 		}
