@@ -44,7 +44,6 @@ char			**freesplit(char **res, int i);
 void			fill(int start, int end, const char *s, char *res);
 char			**ft_split(const char *s, char c);
 int				ft_atoi(const char *str, char **numbers);
-int				ft_strcmp(char *s1, char *s2);
 void			check_duplicates(char **numbers);
 void			free_numbers(char **numbers, int flag);
 void			create_stack(char **numbers, t_stack_needs **stack_a);

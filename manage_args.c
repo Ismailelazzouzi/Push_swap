@@ -71,7 +71,12 @@ void	check_duplicates(char **numbers)
 		j = 0;
 		while (numbers[j] != NULL)
 		{
-			if (ft_strcmp(numbers[i], numbers[j]) == 0 && i != j)
+			if (j == i)
+			{
+				j++;
+				continue ;
+			}
+			if (ft_atoi(numbers[i], numbers) == ft_atoi(numbers[j], numbers))
 				free_numbers(numbers, 1);
 			j++;
 		}
@@ -90,7 +95,8 @@ void	check_numbers(char **numbers)
 		j = 0;
 		while (numbers[i][j] != '\0')
 		{
-			if (numbers[i][j] == '-' && j != 0)
+			if ((numbers[i][j] == '-' && j != 0)
+			|| (numbers[i][j] == '+' && j != 0))
 				free_numbers(numbers, 1);
 			j++;
 		}
