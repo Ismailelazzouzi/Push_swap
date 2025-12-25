@@ -66,9 +66,12 @@ void	complete(t_stack_needs **stack, t_stack_needs *top, char which)
 
 void	freelist(t_stack_needs *a)
 {
-	while (a)
+	t_stack_needs *current = a;
+	t_stack_needs *next;
+	while (current)
 	{
-		free(a);
-		a = a->next;
+		next = current->next;
+		free(current);
+		current = next;
 	}
 }
